@@ -12,7 +12,7 @@ import java.io.Serializable;
  * @author admin
  */
  class Animal implements Serializable {
- 
+
     public void eat() {
         System.out.println("animal eat");
         
@@ -22,6 +22,7 @@ import java.io.Serializable;
           System.out.println(s);
         }
     }
+    int getStateHashCode(){ return this.hashCode();}
 }
  
 class Fish extends Animal {
@@ -54,6 +55,16 @@ class Dog extends Animal {
     public void superEat() {
         System.out.println("Call Animal.eat()");
         super.eat();
+    }
+ 
+}
+
+class Pudel extends Dog {
+ 
+ @Override
+     public void thisEat() {
+        System.out.println("Pudel Pudel.eat()");
+        this.eat();
     }
  
 }
