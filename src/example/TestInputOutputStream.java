@@ -17,6 +17,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.RandomAccessFile;
 import static java.lang.Thread.sleep;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -35,7 +36,7 @@ public static void main(String[] args){
     Runnable b = new ThreadInputOutputStream(pathFile, "b");
        new Thread(b).start();
       // new Thread(w).start();
-       new Thread(o).start();// передаём объект r как параметр создаваемого потоку
+       //new Thread(o).start();// передаём объект o как параметр создаваемого потоку это запись
        // теперь код из run() может работать в отдельном потоке + 
        // обрабатывать переданные параметры! =)) о как)}
 }
@@ -187,16 +188,14 @@ sleep(1000);
         serial.close();
         System.out.println(listreadanimal.size());
         for (int i = 0; i < listreadanimal.size(); i++){
-          System.out.println(listreadanimal.get(i)); 
+          System.out.println("All metgod in class" + listreadanimal.get(i)); 
         }
          }
         
               sleep(2000);  
     } 
 
+         } 
+     
+     
          }
-         }
-    
-
-    
-
